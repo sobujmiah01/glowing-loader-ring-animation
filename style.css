@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border:3px solid #3d3d3d;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    line-height:150px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ff0800;
+    text-shadow: 0 0 15px #ff0000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.ring::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border:3px solid transparent;
+    border-top:3px solid #ff0000;
+    border-left: 3px solid transparent;
+    border-right: 3px solid #ff0000;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: ani-cyle 2s linear infinite;
+    -webkit-animation: ani-cyle 2s linear infinite;
+}
+span{
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    display: block;
+    top:calc(50% - 2px);
+    left:50%;
+    background-color: none;
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+    transform-origin: left;
+}
+span::after{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff0000;
+    position: absolute;
+    right: -8px;
+    bottom: 0px;
+    top:calc(50% - 8px);
+}
+@keyframes ani-cyle{
+    0%{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+    100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+@keyframes animate{
+    0%{
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+}
+        100%{
+            transform: rotate(405deg);
+            -webkit-transform: rotate(405deg);
+            -moz-transform: rotate(405deg);
+            -ms-transform: rotate(405deg);
+            -o-transform: rotate(405deg);
+}
+}
